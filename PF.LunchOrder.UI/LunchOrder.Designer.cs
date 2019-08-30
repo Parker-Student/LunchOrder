@@ -31,9 +31,9 @@
             this.radHamburger = new System.Windows.Forms.RadioButton();
             this.radPizza = new System.Windows.Forms.RadioButton();
             this.radSalad = new System.Windows.Forms.RadioButton();
-            this.chkOpt1 = new System.Windows.Forms.CheckBox();
-            this.chkOpt2 = new System.Windows.Forms.CheckBox();
-            this.chkOpt3 = new System.Windows.Forms.CheckBox();
+            this.chkHam1 = new System.Windows.Forms.CheckBox();
+            this.chkHam2 = new System.Windows.Forms.CheckBox();
+            this.chkHam3 = new System.Windows.Forms.CheckBox();
             this.btnCalc = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +45,15 @@
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTax = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblHamCost = new System.Windows.Forms.Label();
+            this.chkZa1 = new System.Windows.Forms.CheckBox();
+            this.chkZa2 = new System.Windows.Forms.CheckBox();
+            this.chkZa3 = new System.Windows.Forms.CheckBox();
+            this.lblZa = new System.Windows.Forms.Label();
+            this.lblSal = new System.Windows.Forms.Label();
+            this.chkSal3 = new System.Windows.Forms.CheckBox();
+            this.chkSal1 = new System.Windows.Forms.CheckBox();
+            this.chkSal2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // radHamburger
@@ -57,6 +66,7 @@
             this.radHamburger.TabStop = true;
             this.radHamburger.Text = "Hamburger - $6.95";
             this.radHamburger.UseVisualStyleBackColor = true;
+            this.radHamburger.CheckedChanged += new System.EventHandler(this.radHamburger_CheckedChanged);
             // 
             // radPizza
             // 
@@ -68,6 +78,7 @@
             this.radPizza.TabStop = true;
             this.radPizza.Text = "Pizza - $5.95";
             this.radPizza.UseVisualStyleBackColor = true;
+            this.radPizza.CheckedChanged += new System.EventHandler(this.radPizza_CheckedChanged);
             // 
             // radSalad
             // 
@@ -79,36 +90,43 @@
             this.radSalad.TabStop = true;
             this.radSalad.Text = "Salad - $4.95";
             this.radSalad.UseVisualStyleBackColor = true;
+            this.radSalad.CheckedChanged += new System.EventHandler(this.radSalad_CheckedChanged);
             // 
-            // chkOpt1
+            // chkHam1
             // 
-            this.chkOpt1.AutoSize = true;
-            this.chkOpt1.Location = new System.Drawing.Point(437, 67);
-            this.chkOpt1.Name = "chkOpt1";
-            this.chkOpt1.Size = new System.Drawing.Size(164, 17);
-            this.chkOpt1.TabIndex = 3;
-            this.chkOpt1.Text = "Lettuce, Tomato, and Onions";
-            this.chkOpt1.UseVisualStyleBackColor = true;
+            this.chkHam1.AutoSize = true;
+            this.chkHam1.Location = new System.Drawing.Point(437, 67);
+            this.chkHam1.Name = "chkHam1";
+            this.chkHam1.Size = new System.Drawing.Size(164, 17);
+            this.chkHam1.TabIndex = 3;
+            this.chkHam1.Text = "Lettuce, Tomato, and Onions";
+            this.chkHam1.UseVisualStyleBackColor = true;
+            this.chkHam1.Visible = false;
+            this.chkHam1.CheckedChanged += new System.EventHandler(this.chkHam1_CheckedChanged);
             // 
-            // chkOpt2
+            // chkHam2
             // 
-            this.chkOpt2.AutoSize = true;
-            this.chkOpt2.Location = new System.Drawing.Point(437, 101);
-            this.chkOpt2.Name = "chkOpt2";
-            this.chkOpt2.Size = new System.Drawing.Size(163, 17);
-            this.chkOpt2.TabIndex = 4;
-            this.chkOpt2.Text = "Ketchup, Mustard, and Mayo";
-            this.chkOpt2.UseVisualStyleBackColor = true;
+            this.chkHam2.AutoSize = true;
+            this.chkHam2.Location = new System.Drawing.Point(437, 101);
+            this.chkHam2.Name = "chkHam2";
+            this.chkHam2.Size = new System.Drawing.Size(163, 17);
+            this.chkHam2.TabIndex = 4;
+            this.chkHam2.Text = "Ketchup, Mustard, and Mayo";
+            this.chkHam2.UseVisualStyleBackColor = true;
+            this.chkHam2.Visible = false;
+            this.chkHam2.CheckedChanged += new System.EventHandler(this.chkHam2_CheckedChanged);
             // 
-            // chkOpt3
+            // chkHam3
             // 
-            this.chkOpt3.AutoSize = true;
-            this.chkOpt3.Location = new System.Drawing.Point(437, 135);
-            this.chkOpt3.Name = "chkOpt3";
-            this.chkOpt3.Size = new System.Drawing.Size(84, 17);
-            this.chkOpt3.TabIndex = 5;
-            this.chkOpt3.Text = "French Fries";
-            this.chkOpt3.UseVisualStyleBackColor = true;
+            this.chkHam3.AutoSize = true;
+            this.chkHam3.Location = new System.Drawing.Point(437, 135);
+            this.chkHam3.Name = "chkHam3";
+            this.chkHam3.Size = new System.Drawing.Size(84, 17);
+            this.chkHam3.TabIndex = 5;
+            this.chkHam3.Text = "French Fries";
+            this.chkHam3.UseVisualStyleBackColor = true;
+            this.chkHam3.Visible = false;
+            this.chkHam3.CheckedChanged += new System.EventHandler(this.chkHam3_CheckedChanged);
             // 
             // btnCalc
             // 
@@ -118,6 +136,7 @@
             this.btnCalc.TabIndex = 6;
             this.btnCalc.Text = "Place Order";
             this.btnCalc.UseVisualStyleBackColor = true;
+            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click_1);
             // 
             // btnExit
             // 
@@ -127,6 +146,7 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // label3
             // 
@@ -156,7 +176,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 171);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Add-On Items ($.75/each)";
+            this.label2.Text = "Add-On Items";
             // 
             // label4
             // 
@@ -212,11 +232,122 @@
             this.lblTotal.TabIndex = 18;
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // lblHamCost
+            // 
+            this.lblHamCost.AutoSize = true;
+            this.lblHamCost.Location = new System.Drawing.Point(461, 23);
+            this.lblHamCost.Name = "lblHamCost";
+            this.lblHamCost.Size = new System.Drawing.Size(63, 13);
+            this.lblHamCost.TabIndex = 19;
+            this.lblHamCost.Text = "($.75/each)";
+            this.lblHamCost.Visible = false;
+            // 
+            // chkZa1
+            // 
+            this.chkZa1.AutoSize = true;
+            this.chkZa1.Location = new System.Drawing.Point(432, 68);
+            this.chkZa1.Name = "chkZa1";
+            this.chkZa1.Size = new System.Drawing.Size(74, 17);
+            this.chkZa1.TabIndex = 20;
+            this.chkZa1.Text = "Pepperoni";
+            this.chkZa1.UseVisualStyleBackColor = true;
+            this.chkZa1.Visible = false;
+            this.chkZa1.CheckedChanged += new System.EventHandler(this.chkZa1_CheckedChanged);
+            // 
+            // chkZa2
+            // 
+            this.chkZa2.AutoSize = true;
+            this.chkZa2.Location = new System.Drawing.Point(432, 101);
+            this.chkZa2.Name = "chkZa2";
+            this.chkZa2.Size = new System.Drawing.Size(68, 17);
+            this.chkZa2.TabIndex = 21;
+            this.chkZa2.Text = "Sausage";
+            this.chkZa2.UseVisualStyleBackColor = true;
+            this.chkZa2.Visible = false;
+            this.chkZa2.CheckedChanged += new System.EventHandler(this.chkZa2_CheckedChanged);
+            // 
+            // chkZa3
+            // 
+            this.chkZa3.AutoSize = true;
+            this.chkZa3.Location = new System.Drawing.Point(432, 136);
+            this.chkZa3.Name = "chkZa3";
+            this.chkZa3.Size = new System.Drawing.Size(55, 17);
+            this.chkZa3.TabIndex = 22;
+            this.chkZa3.Text = "Olives";
+            this.chkZa3.UseVisualStyleBackColor = true;
+            this.chkZa3.Visible = false;
+            this.chkZa3.CheckedChanged += new System.EventHandler(this.chkZa3_CheckedChanged);
+            // 
+            // lblZa
+            // 
+            this.lblZa.AutoSize = true;
+            this.lblZa.Location = new System.Drawing.Point(461, 23);
+            this.lblZa.Name = "lblZa";
+            this.lblZa.Size = new System.Drawing.Size(63, 13);
+            this.lblZa.TabIndex = 23;
+            this.lblZa.Text = "($.50/each)";
+            this.lblZa.Visible = false;
+            // 
+            // lblSal
+            // 
+            this.lblSal.AutoSize = true;
+            this.lblSal.Location = new System.Drawing.Point(461, 23);
+            this.lblSal.Name = "lblSal";
+            this.lblSal.Size = new System.Drawing.Size(63, 13);
+            this.lblSal.TabIndex = 24;
+            this.lblSal.Text = "($.25/each)";
+            this.lblSal.Visible = false;
+            // 
+            // chkSal3
+            // 
+            this.chkSal3.AutoSize = true;
+            this.chkSal3.Location = new System.Drawing.Point(432, 136);
+            this.chkSal3.Name = "chkSal3";
+            this.chkSal3.Size = new System.Drawing.Size(86, 17);
+            this.chkSal3.TabIndex = 25;
+            this.chkSal3.Text = "Bread Sticks";
+            this.chkSal3.UseVisualStyleBackColor = true;
+            this.chkSal3.Visible = false;
+            this.chkSal3.CheckedChanged += new System.EventHandler(this.chkSal3_CheckedChanged);
+            // 
+            // chkSal1
+            // 
+            this.chkSal1.AutoSize = true;
+            this.chkSal1.Location = new System.Drawing.Point(432, 67);
+            this.chkSal1.Name = "chkSal1";
+            this.chkSal1.Size = new System.Drawing.Size(68, 17);
+            this.chkSal1.TabIndex = 26;
+            this.chkSal1.Text = "Croutons";
+            this.chkSal1.UseVisualStyleBackColor = true;
+            this.chkSal1.Visible = false;
+            this.chkSal1.CheckedChanged += new System.EventHandler(this.chkSal1_CheckedChanged);
+            // 
+            // chkSal2
+            // 
+            this.chkSal2.AutoSize = true;
+            this.chkSal2.Location = new System.Drawing.Point(432, 102);
+            this.chkSal2.Name = "chkSal2";
+            this.chkSal2.Size = new System.Drawing.Size(77, 17);
+            this.chkSal2.TabIndex = 27;
+            this.chkSal2.Text = "Bacon Bits";
+            this.chkSal2.UseVisualStyleBackColor = true;
+            this.chkSal2.Visible = false;
+            this.chkSal2.CheckedChanged += new System.EventHandler(this.chkSal2_CheckedChanged);
+            // 
             // LunchOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkSal2);
+            this.Controls.Add(this.chkSal1);
+            this.Controls.Add(this.chkSal3);
+            this.Controls.Add(this.lblSal);
+            this.Controls.Add(this.lblZa);
+            this.Controls.Add(this.chkZa3);
+            this.Controls.Add(this.chkZa2);
+            this.Controls.Add(this.chkZa1);
+            this.Controls.Add(this.lblHamCost);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTax);
             this.Controls.Add(this.lblSubTotal);
@@ -225,9 +356,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCalc);
-            this.Controls.Add(this.chkOpt3);
-            this.Controls.Add(this.chkOpt2);
-            this.Controls.Add(this.chkOpt1);
+            this.Controls.Add(this.chkHam3);
+            this.Controls.Add(this.chkHam2);
+            this.Controls.Add(this.chkHam1);
             this.Controls.Add(this.radSalad);
             this.Controls.Add(this.radPizza);
             this.Controls.Add(this.radHamburger);
@@ -246,9 +377,9 @@
         private System.Windows.Forms.RadioButton radHamburger;
         private System.Windows.Forms.RadioButton radPizza;
         private System.Windows.Forms.RadioButton radSalad;
-        private System.Windows.Forms.CheckBox chkOpt1;
-        private System.Windows.Forms.CheckBox chkOpt2;
-        private System.Windows.Forms.CheckBox chkOpt3;
+        private System.Windows.Forms.CheckBox chkHam1;
+        private System.Windows.Forms.CheckBox chkHam2;
+        private System.Windows.Forms.CheckBox chkHam3;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label3;
@@ -260,6 +391,15 @@
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblHamCost;
+        private System.Windows.Forms.CheckBox chkZa1;
+        private System.Windows.Forms.CheckBox chkZa2;
+        private System.Windows.Forms.CheckBox chkZa3;
+        private System.Windows.Forms.Label lblZa;
+        private System.Windows.Forms.Label lblSal;
+        private System.Windows.Forms.CheckBox chkSal3;
+        private System.Windows.Forms.CheckBox chkSal1;
+        private System.Windows.Forms.CheckBox chkSal2;
     }
 }
 
