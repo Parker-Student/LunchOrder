@@ -34,7 +34,7 @@
             this.chkOpt1 = new System.Windows.Forms.CheckBox();
             this.chkOpt2 = new System.Windows.Forms.CheckBox();
             this.chkOpt3 = new System.Windows.Forms.CheckBox();
-            this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnCalc = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,14 +110,14 @@
             this.chkOpt3.Text = "French Fries";
             this.chkOpt3.UseVisualStyleBackColor = true;
             // 
-            // btnCalculate
+            // btnCalc
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(437, 268);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculate.TabIndex = 6;
-            this.btnCalculate.Text = "Place Order";
-            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalc.Location = new System.Drawing.Point(437, 268);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(75, 23);
+            this.btnCalc.TabIndex = 6;
+            this.btnCalc.Text = "Place Order";
+            this.btnCalc.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
@@ -224,7 +224,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.chkOpt3);
             this.Controls.Add(this.chkOpt2);
             this.Controls.Add(this.chkOpt1);
@@ -249,7 +249,7 @@
         private System.Windows.Forms.CheckBox chkOpt1;
         private System.Windows.Forms.CheckBox chkOpt2;
         private System.Windows.Forms.CheckBox chkOpt3;
-        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
